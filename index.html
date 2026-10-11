@@ -221,15 +221,16 @@
       <p>When End Users interact with a ForumFlow-powered forum, we collect and store the following data:</p>
       <ul>
         <li><strong>Wix Member ID</strong> — a unique identifier assigned by Wix to each logged-in user, used to associate posts with their author.</li>
-        <li><strong>Display name</strong> — the member's profile name as provided by Wix (nickname or first name), displayed next to their forum posts.</li>
+        <li><strong>Display name</strong> — for logged-in members, the member's Wix profile nickname; if the nickname is missing or looks like an email address, the first name and last-name initial; otherwise "Member". For guest visitors, the name they enter when posting.</li>
         <li><strong>Forum content</strong> — thread titles, thread bodies, and replies submitted by users.</li>
+        <li><strong>Likes</strong> — which members liked which threads and replies.</li>
         <li><strong>Site instance ID</strong> — a Wix identifier that scopes all forum data to the specific site on which the App is installed.</li>
-        <li><strong>Timestamps</strong> — date and time of post creation.</li>
         <li><strong>Timestamps</strong> — date and time of post creation and, if edited, of the last edit.</li>
         <li><strong>Account type</strong> — whether a post was made by a logged-in member or a guest visitor.</li>
         <li><strong>Team status</strong> — whether the Site Owner has marked a member as part of their team, used to display a Team badge next to that member's name.</li>
-      <p style="margin-top:0.6rem;">We do <strong>not</strong> collect email addresses, passwords, payment information, or any sensitive personal data.</p>
+      </ul>
       <p style="margin-top:0.6rem;">We do <strong>not</strong> collect End Users' email addresses, passwords, payment information, or any sensitive personal data. When a Site Owner installs the App, we use the Site Owner's email address, as provided by Wix, only to send a one-time welcome email.</p>
+    </div>
 
     <div class="clause">
       <h3>3. How We Use Your Data</h3>
@@ -237,9 +238,9 @@
         <li>To display forum threads and replies on the site where the App is installed.</li>
         <li>To attribute posts to their authors using display names.</li>
         <li>To enforce site-specific permissions set by the Site Owner (e.g., members-only posting).</li>
-        <li>To allow users to delete their own posts.</li>
         <li>To allow users to edit and delete their own posts.</li>
         <li>To maintain, troubleshoot, and improve the App. Authorized personnel may access stored forum data solely for these purposes, such as investigating errors or responding to support requests.</li>
+      </ul>
       <p style="margin-top:0.6rem;">We do not use your data for advertising, profiling, or any purpose other than operating the forum.</p>
     </div>
 
@@ -250,8 +251,8 @@
 
     <div class="clause">
       <h3>5. Data Sharing</h3>
-      <p>We do not sell, rent, or share your personal data with third parties. The only sub-processor we use is <strong>Supabase</strong> for database hosting. Supabase's privacy policy is available at <a href="https://supabase.com/privacy" target="_blank" rel="noopener" style="color:var(--accent);">supabase.com/privacy</a>.</p>
       <p>We do not sell, rent, or share your personal data with third parties. We use the following sub-processors to operate the App: <strong>Supabase</strong> (database hosting, EU region), <strong>Cloudflare</strong> (application hosting), and <strong>Resend</strong> (transactional email to Site Owners). Each processes data only as needed to provide its service.</p>
+    </div>
 
     <div class="clause">
       <h3>6. Data Retention</h3>
