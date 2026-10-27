@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForumFlow — Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f6f2;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #2563eb;
+      --rule: #dddbd3;
+      --card: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,246,242,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 2.5rem 3.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.2rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+    }
+    .updated {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .doc-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--ink);
+    }
+    .doc-section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .doc-section > h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    /* ── CLAUSES ── */
+    .clause {
+      margin-bottom: 2.2rem;
+    }
+    .clause h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .clause p, .clause ul {
+      color: #3d3d38;
+      font-size: 0.97rem;
+    }
+    .clause ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+    .clause ul li { margin-bottom: 0.3rem; }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      margin-top: 3rem;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .contact-card p { font-size: 0.93rem; color: #3d3d38; }
+    .contact-card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .hero, .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">ForumFlow</a>
+  <div class="nav-links">
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Legal</span>
+  <h1>Privacy Policy &amp; Terms of Use</h1>
+  <p>ForumFlow is a community forum app for Wix sites. These documents explain how we handle your data and what governs your use of the app.</p>
+  <p class="updated">Last updated: October 27, 2026</p>
+</div>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════════
+       PRIVACY POLICY
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="privacy">
+    <p class="section-label">Document 01</p>
+    <h2>Privacy Policy</h2>
+
+    <div class="clause">
+      <h3>1. Who We Are</h3>
+      <p>ForumFlow ("the App", "we", "us") is a third-party application available on the Wix App Market, developed by Michael Adam. The App provides a community forum widget that Wix site owners ("Site Owners") can install on their Wix sites for use by their site visitors and members ("End Users").</p>
+    </div>
+
+    <div class="clause">
+      <h3>2. What Data We Collect</h3>
+      <p>When End Users interact with a ForumFlow-powered forum, we collect and store the following data:</p>
+      <ul>
+        <li><strong>Wix Member ID</strong> — a unique identifier assigned by Wix to each logged-in user, used to associate posts with their author.</li>
+        <li><strong>Display name</strong> — for logged-in members, the member's Wix profile nickname; if the nickname is missing or looks like an email address, the first name and last-name initial. If neither is available, the member is asked once to enter the name they want shown in the forum; that name is stored for that site and also shown on the member's earlier posts. If no name can be determined, a generic label ("Member" followed by a short code) is shown. For guest visitors, the name they enter when posting.</li>
+        <li><strong>Forum content</strong> — thread titles, thread bodies, and replies submitted by users.</li>
+        <li><strong>Likes</strong> — which members liked which threads and replies.</li>
+        <li><strong>Site instance ID</strong> — a Wix identifier that scopes all forum data to the specific site on which the App is installed.</li>
+        <li><strong>Timestamps</strong> — date and time of post creation and, if edited, of the last edit.</li>
+        <li><strong>Account type</strong> — whether a post was made by a logged-in member or a guest visitor.</li>
+        <li><strong>Team status</strong> — whether the Site Owner has marked a member as part of their team, used to display a Team badge next to that member's name.</li>
+        <li><strong>Notification preference</strong> — whether a logged-in member has turned off reply notification emails.</li>
+        <li><strong>Follower email</strong> — only if an End User chooses to follow the forum with "Stay in the loop" (see below): the email address they enter, or, for a logged-in member, their Wix login email.</li>
+        <li><strong>Forum usage counts</strong> — when the forum is loaded on a site and when a post is opened, we record the site it belongs to, the post (if any), the time, and the anonymous visitor ID that Wix assigns to the browser. We do not store names, email addresses or IP addresses with these counts.</li>
+      </ul>
+      <p style="margin-top:0.6rem;">Apart from follower emails, we do <strong>not</strong> store End Users' email addresses, and we never store passwords, payment information, or any sensitive personal data. When a reply notification is sent (see section 3), we retrieve the recipient member's login email address from Wix at the moment of sending and do not store it. When a Site Owner installs the App, we use the Site Owner's email address, as provided by Wix, only to send a welcome email and, if needed, a one-time email letting them know their starter posts are ready.</p>
+    </div>
+
+    <div class="clause">
+      <h3>AI starter posts and post suggestions</h3>
+      <p>When ForumFlow is added to a site and the site is live, we read the text of the site's public pages (the home page and a few pages it links to) and send that text, the site's name and its language to Anthropic (our AI provider) to write a few suggested starter posts for the forum. If a Site Owner uses "Suggest posts" in the ForumFlow dashboard, we send the short description the owner types, the site's name and the site's language code to Anthropic for the same purpose. Only public site content is used; no visitor or member data is sent. Suggestions are stored with the site so the owner can review and edit them, and nothing is published unless the owner chooses to.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Stay in the loop (forum followers)</h3>
+      <p>End Users can choose to follow a forum by entering their email address (logged-in members follow with their Wix login email). When they do, we store the email address for that site and add it to the Site Owner's Wix Contacts with a "Forum follower" label, marked as subscribed to the site's emails, so the Site Owner can keep them updated. From that point the contact is managed by the Site Owner under Wix's terms, and the follower can unsubscribe through the Site Owner's emails at any time. Following is always optional.</p>
+    </div>
+
+    <div class="clause">
+      <h3>Forum posts in the site's CMS</h3>
+      <p>Forum posts and replies (including the author's display name) are also copied into a "Forum Posts" collection in the site's Wix CMS, so the site owner can give each post its own page. Like other site collections, this collection can be read through the site's public data interface. Posts appear on search engines only if the site owner adds the post page to their site. The copy in the CMS is managed by the site owner and is not removed when the App is uninstalled.</p>
+    </div>
+
+    <div class="clause">
+      <h3>3. How We Use Your Data</h3>
+      <ul>
+        <li>To display forum threads and replies on the site where the App is installed.</li>
+        <li>To attribute posts to their authors using display names.</li>
+        <li>To enforce site-specific permissions set by the Site Owner (e.g., members-only posting).</li>
+        <li>To allow users to edit and delete their own posts.</li>
+        <li>To send reply notifications. When someone replies to a thread started by a logged-in member, we retrieve that member's login email address from Wix at the moment of sending and use it only to email them a notification containing the replier's display name, the thread title, an excerpt of the reply, and a link back to the forum. We do not store the email address. Guest visitors never receive these emails. Members can turn these emails off at any time with the "Email me when someone replies to my threads" setting in the forum, and Site Owners can turn them off for their entire forum.</li>
+        <li>To add End Users who choose to follow the forum to the Site Owner's Wix Contacts, as described above.</li>
+        <li>To suggest starter posts for a new forum, as described above.</li>
+        <li>To show Site Owners how their forum is doing. Site Owners only see totals, such as views per week, the number of different visitors and the most-read posts, never individual visitors.</li>
+        <li>To maintain, troubleshoot, and improve the App. Authorized personnel may access stored forum data solely for these purposes, such as investigating errors or responding to support requests.</li>
+      </ul>
+      <p style="margin-top:0.6rem;">We do not use your data for advertising, profiling, or any purpose other than operating the forum.</p>
+    </div>
+
+    <div class="clause">
+      <h3>4. Data Storage &amp; Security</h3>
+      <p>Forum data is stored in a PostgreSQL database hosted on <strong>Supabase</strong> (Frankfurt region, EU). Access to the database requires a secret service-role key that is never exposed to the browser or widget. All communication between the widget and our servers occurs over HTTPS. Row-Level Security (RLS) is enabled on the database.</p>
+    </div>
+
+    <div class="clause">
+      <h3>5. Data Sharing</h3>
+      <p>We do not sell or rent your personal data. Follower emails are shared only with the Site Owner of the forum being followed, through their Wix Contacts. We use the following sub-processors to operate the App: <strong>Supabase</strong> (database hosting, EU region), <strong>Cloudflare</strong> (application hosting), <strong>Resend</strong> (transactional email delivery, United States region: welcome and setup emails to Site Owners and reply notifications to members, including the recipient's email address and the notification content), and <strong>Anthropic</strong> (writing AI starter posts and post suggestions from public site content or the owner's description). Each processes data only as needed to provide its service.</p>
+    </div>
+
+    <div class="clause">
+      <h3>6. Data Retention</h3>
+      <p>Forum posts are retained as long as the App is installed on the site. If a Site Owner uninstalls ForumFlow, their site's data may be deleted upon request. Individual users may delete their own posts at any time through the forum interface. Forum usage counts are kept for up to 13 months and then deleted. Copies of posts in the site's CMS, and followers added to the site's Wix Contacts, are kept until the site owner deletes them. Follower emails stored by ForumFlow are kept while the App is installed and can be deleted on request.</p>
+    </div>
+
+    <div class="clause">
+      <h3>7. Your Rights (GDPR)</h3>
+      <p>If you are located in the European Union or European Economic Area, you have the right to access, correct, or request deletion of your personal data. To exercise these rights, contact us at the email address below. We will respond within 30 days.</p>
+    </div>
+
+    <div class="clause">
+      <h3>8. Cookies &amp; Tracking</h3>
+      <p>ForumFlow does not set cookies and does not use tracking pixels or third-party analytics scripts. User identity is established through Wix's built-in authentication tokens — no separate login or cookie is set by our App. To make the forum load faster, the widget keeps a copy of recently loaded forum content in the browser's local storage, and it uses the browser's session storage to count each opened post only once per visit. This information stays in the browser and is not used for advertising or to follow visitors across other sites.</p>
+    </div>
+
+    <div class="clause">
+      <h3>9. Children's Privacy</h3>
+      <p>ForumFlow is not directed at children under the age of 13. We do not knowingly collect personal data from children. If you believe a child has submitted data through the App, please contact us so we can delete it.</p>
+    </div>
+
+    <div class="clause">
+      <h3>10. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="contact-card">
+      <p><strong>Privacy contact</strong><br />
+      For privacy-related requests or questions, email us at: <a href="mailto:hello@brivanolabs.com">hello@brivanolabs.com</a><br />
+      We aim to respond within 30 days.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TERMS OF USE
+  ══════════════════════════════════════════ -->
+  <section class="doc-section" id="terms">
+    <p class="section-label">Document 02</p>
+    <h2>Terms of Use</h2>
+
+    <div class="clause">
+      <h3>1. Acceptance of Terms</h3>
+      <p>By installing or using ForumFlow ("the App"), you agree to these Terms of Use. If you do not agree, do not install or use the App. These Terms apply to both Site Owners (who install the App) and End Users (who use the forum on a site).</p>
+    </div>
+
+    <div class="clause">
+      <h3>2. Description of Service</h3>
+      <p>ForumFlow provides a community forum widget for Wix websites. The App allows site visitors and members to create discussion threads and replies on sites where it is installed. The App is distributed through the Wix App Market and governed by Wix's platform terms in addition to these Terms.</p>
+    </div>
+
+    <div class="clause">
+      <h3>3. Site Owner Responsibilities</h3>
+      <p>Site Owners who install ForumFlow are responsible for:</p>
+      <ul>
+        <li>Ensuring their use of the App complies with applicable laws and Wix's Terms of Service.</li>
+        <li>Moderating content posted on their forum and removing content that violates their site's rules.</li>
+        <li>Reviewing AI-suggested starter posts before publishing them.</li>
+        <li>Handling forum followers added to their Wix Contacts in line with applicable email and privacy laws.</li>
+        <li>Informing their site members about data collection practices as described in the Privacy Policy above.</li>
+        <li>Not using the App to facilitate illegal activity, harassment, or harm.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>4. End User Conduct</h3>
+      <p>Users of ForumFlow-powered forums agree not to post content that:</p>
+      <ul>
+        <li>Is unlawful, defamatory, abusive, threatening, or harassing.</li>
+        <li>Infringes on any intellectual property rights.</li>
+        <li>Contains spam, malware, or malicious links.</li>
+        <li>Violates the rules set by the Site Owner of the forum you are using.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>5. Intellectual Property</h3>
+      <p>The ForumFlow application, its code, design, and branding are the intellectual property of Michael Adam. Users retain ownership of the content they post. By posting content, you grant ForumFlow a limited license to store and display that content as part of operating the forum service.</p>
+    </div>
+
+    <div class="clause">
+      <h3>6. Disclaimer of Warranties</h3>
+      <p>ForumFlow is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, or suitable for any particular purpose. Your use of the App is at your own risk.</p>
+    </div>
+
+    <div class="clause">
+      <h3>7. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, ForumFlow and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App, including but not limited to loss of data, loss of revenue, or reputational harm.</p>
+    </div>
+
+    <div class="clause">
+      <h3>8. Termination</h3>
+      <p>We reserve the right to discontinue the App or terminate access for any Site Owner who violates these Terms. Site Owners may uninstall the App at any time through their Wix dashboard.</p>
+    </div>
+
+    <div class="clause">
+      <h3>9. Governing Law</h3>
+      <p>These Terms are governed by the laws of the State of Israel, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Israel.</p>
+    </div>
+
+    <div class="clause">
+      <h3>10. Changes to These Terms</h3>
+      <p>We may update these Terms at any time. The "Last updated" date reflects the most recent revision. Continued use of the App constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="contact-card">
+      <p><strong>Questions about these Terms?</strong><br />
+      Contact us at: <a href="mailto:hello@brivanolabs.com">hello@brivanolabs.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 ForumFlow by Michael Adam. All rights reserved.</p>
+  <p><a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms">Terms of Use</a></p>
+</footer>
+
+</body>
+</html>
